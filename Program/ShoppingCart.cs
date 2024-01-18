@@ -5,6 +5,10 @@ namespace Sana07
     public class ShoppingCart
     {
         protected List<Product> products;
+        public ShoppingCart()
+        {
+            products = new List<Product>();
+        }
         public void addToShoppingCart(Product product)
         {
             products.Add(product);
@@ -13,12 +17,14 @@ namespace Sana07
         {
             products.Remove(product);
         }
-        public void showShoppingCart()
+        public List<string> showShoppingCart()
         {
+            List<string> productsInfo = new List<string>();
             foreach (Product product in products)
             {
-                product.Display();
+                productsInfo.Add(product.Display());
             }
+            return productsInfo;
         }
         public float calcilateTotalPrice()
         {

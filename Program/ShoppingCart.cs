@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Program
+namespace Sana07
 {
     public class ShoppingCart
     {

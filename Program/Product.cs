@@ -1,14 +1,14 @@
 ﻿using System;
 
-namespace Program
+namespace Sana07
 {
     public abstract class Product
     {
-        protected String _name;
+        protected string _name;
         protected float _price;
         protected int _count;
 
-        public String Name
+        public string Name
         {
             get { return _name; }
             set 
@@ -23,7 +23,7 @@ namespace Program
             set
             {
                 if (value > 0) _price = value;
-                else throw new ArgumentException("Price of product can not be negative!");
+                else throw new ArgumentException("Price of product can not be negative or equal zero!");
             }
         }
         public int Count
@@ -39,10 +39,10 @@ namespace Program
         public Product()
         {
             Name = "Undefined";
-            Price = 0f;
+            Price = 1f;
             Count = 0;
         }
-        public Product(String name, float price, int count)
+        public Product(string name, float price, int count)
         {
             Name = name;
             Price = price;
@@ -55,6 +55,6 @@ namespace Program
             Count = product.Count;
         }
 
-        public abstract String Display();
+        public abstract string Display();
     }
 }
